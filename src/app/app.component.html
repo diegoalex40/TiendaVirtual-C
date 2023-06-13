@@ -1,0 +1,74 @@
+<hr>
+<h1>Estructuras de Control</h1>
+<h1>*ngFor</h1>
+<ul>
+  <li *ngFor="let str of myArray; index as i">
+    {{i }}. {{str}}
+  </li>
+</ul>
+
+
+<hr>
+<h1>*ngIf</h1>
+<input type="text" required #nameInput="ngModel" [(ngModel)]="person.name2">
+<p *ngIf="person.name2 === 'nicolas'">Tu nombre es "Nicolas"</p>
+<p *ngIf="person.name2 === 'pedro' && person.age2 == 18; else myBlock">Tu nombre es "Pedro"</p>
+<ng-template #myBlock>
+  <p>Blocke Else</p>
+</ng-template>
+
+<hr>
+<h1>Comunicaicon de datos</h1>
+<hr>
+<h1>ngModel</h1>
+<p>Nombre: {{person.name2}}</p>
+<input type="text" required #nameInput="ngModel" [(ngModel)]="person.name2">
+<p>valid : {{nameInput.valid}}</p>
+<p>Age: {{person.age2}}</p>
+<input type="number" max="30" min="10" required #ageInput="ngModel" [(ngModel)]="person.age2">
+<p>Valid: {{ageInput.valid}}</p>
+
+<hr>
+<h2>Otros Eventos</h2>
+<p>Nombre: {{person.name2}}</p>
+<input type="text" [value]="person.name2" (keyup)="changeName($event)">
+
+<div class="box" (scroll)="onScroll($event)">
+  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique quod itaque porro sequi error! Dicta,
+    nisi? Aspernatur molestias tempora sed tempore corrupti! Cupiditate maxime corporis itaque fugiat rerum
+    reprehenderit. Doloremque!
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique quod itaque porro sequi error! Dicta,
+    nisi? Aspernatur molestias tempora sed tempore corrupti! Cupiditate maxime corporis itaque fugiat rerum
+    reprehenderit. Doloremque!
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique quod itaque porro sequi error! Dicta,
+    nisi? Aspernatur molestias tempora sed tempore corrupti! Cupiditate maxime corporis itaque fugiat rerum
+    reprehenderit. Doloremque!
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique quod itaque porro sequi error! Dicta,
+    nisi? Aspernatur molestias tempora sed tempore corrupti! Cupiditate maxime corporis itaque fugiat rerum
+    reprehenderit. Doloremque!
+  </p>
+</div>
+<hr>
+<h2>Eventos</h2>
+<button [disabled]="habilitado">Ejemplo2</button>
+<button (click)="toggleButton()">On/Off</button>
+<p>Años de la Empres : {{age}}</p>
+<button (click)="increaseAge()">Aumentar</button>
+
+<p>la Edad de {{person.name2}} es de: {{person.age2}}</p>
+<button (click)="increaseAge2()">Aumentar</button>
+
+<hr>
+<h2>Propiedades</h2>
+<button [disabled]="habilitado">Ejemplo</button>
+<input type="text" [value]="Empresa" [disabled]="habilitado">
+<progress max="30" [value]="age">Progreso</progress>
+<img [src]="imagen" width="100px" alt="imagen">
+
+<hr>
+<h2>Stirng Interpolation</h2>
+<h1> HOLA MUNDO </h1>
+
+<H2> 3 + 3 = {{3+3}} </H2>
+<h3>El titutlo de este proyecto es: {{titulo}}</h3>
+<img src="{{imagen}}" alt="imagen">
